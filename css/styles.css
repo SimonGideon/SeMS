@@ -1,51 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --bg-primary: #41444b;
+    --bg-secondary: #52575d;
+    --bg-active: #fddb3a;
+    --cl-text: #f6f4e6;
+
+
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'popins', sans-serif;
+    font-family: 'popins', sans-serif, "robot";
 }
 
 body {
-    width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.container {
+#container {
+    align-items: center;
     width: 100%;
-    min-height: 50%;
-    background: #fff;
+    min-width: max-content;
+    background: white;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .3);
-    padding: 40px 30px;
 }
 
-.container .login-text {
+.enclose-form {
+    margin: auto !important;
+    width: 390px !important;
+    align-content: center !important;
+    margin-top: 100px !important;
+}
+
+#container .login-text {
     color: #111;
     font-weight: 500;
     font-size: 1.1rem;
     text-align: center;
-    margin-bottom: 25px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     display: block;
     text-transform: capitalize;
 }
 
-.container .logi-social {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50%, lfr));
-}
 
-.container .login-email .input-group {
+#container .login-email .input-group {
     width: 100%;
-    height: 40px;
+    height: 50px;
     margin-bottom: 15px;
 }
 
-.container .login-email .input-group input {
+#container .login-email .input-group input {
     width: 100%;
     height: 80%;
     border: 2px solid #e7e7e7;
@@ -57,16 +67,15 @@ body {
     transition: -3s;
 }
 
-.container .login-email .input-group .input:focus,
-.container .login-email .input-group .input:valid {
+#container .login-email .input-group .input:focus,
+#container .login-email .input-group .input:valid {
     border-color: #a2a2a2;
 }
 
-.container .login-email .input-group .btn {
+#container .login-email .input-group .btn {
     display: block;
     width: 100%;
-    height: 30px;
-    text-align: center;
+    height: 40px;
     border: none;
     background: #a29bfe;
     outline: none;
@@ -79,26 +88,36 @@ body {
 
 .login-register-text {
     font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 50px;
 }
 
-.nav-bar {
+
+/* ====Navbar=== */
+.navbar {
     background-color: black;
-    height: 20px;
 }
 
-nav li {
+.navbar li {
     color: white;
     font-size: 20px;
     list-style: none;
     display: inline-block;
     font-family: 'Times New Roman', Times, serif;
-    padding-right: 5px;
 }
 
-.navitem {
-    align-items: right;
+.navbar a {
+    display: block;
 }
 
+.navbar h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.navbar ul {
+    text-align: right !important;
+}
 
 .card {
     background-color: turquoise;
@@ -108,87 +127,127 @@ nav li {
     font-size: 30px;
 }
 
-/* =================>Side Menu<================ */
-/* The side navigation menu */
-.sidenav {
-    height: 100%;
-    /* 100% Full-height */
-    width: 0;
-    /* 0 width - change this with JavaScript */
+/* ===Side bar=== */
+.side-bar {
     position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Stay on top */
-    top: 0;
-    /* Stay at the top */
-    left: 0;
-    background-color: #111;
-    /* Black*/
-    overflow-x: hidden;
-    /* Disable horizontal scroll */
-    padding-top: 60px;
-    /* Place content 60px from the top */
+    width: 60px;
+    height: 100%;
+    background: var(--bg-secondary);
     transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidenav */
+    overflow: hidden;
 }
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+#side-bar.active {
+    width: 300px;
+}
+
+.side-bar ul {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+}
+
+#side-bar ul li {
+    list-style: none;
+    width: 100%;
+    position: relative;
+}
+
+#side-bar ul li a:hover {
+    color: var(--bg-primary);
+}
+
+#side-bar ul li:hover a::before {
+    background: var(--bg-active);
+    width: 100%;
+}
+
+#side-bar ul li a {
+    position: relative;
     display: block;
-    transition: 0.3s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--cl-text);
+    transition: 0.2s;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+#side-bar ul li a::before {
+    content: "";
     position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-    }
-}
-
-/* ===to always show the side menu ============*/
-/* The sidenav */
-.sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
     left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
+    width: 0;
+    height: 100%;
+    transition: 0.2s;
 }
 
-/* Page content */
-.main {
-    margin-left: 200px;
-    /* Same as the width of the sidenav */
+#side-bar ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-size: 1.1em;
+}
+
+#side-bar ul li a.title {
+    position: relative;
+    font-size: 0.8em;
+}
+
+#side-bar ul li a.toggle {
+    border-bottom: 3px solid var(--bg-primary);
+}
+
+.toggle {
+    cursor: pointer;
+}
+
+/* ===Dashboard ===*/
+.container-fluid {
+    position: relative;
+    margin-top: 15vh;
+    margin-left: 100px;
+}
+
+/* media query */
+@media(max-width:768px) {
+    header {
+        margin-top: 70px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 60px;
+        background: var(--bg-secondary);
+        color: var(--cl-text);
+
+    }
+
+    .bi {
+        font-size: 80%;
+    }
+
+    header a {
+        color: var(--cl-text);
+    }
+
+    #side-bar {
+        left: -60px;
+    }
+
+    #side-bar .active {
+        left: 0;
+        width: 100%;
+    }
+
+    #side-bar ul li a.toggle {
+        display: none;
+
+    }
 }

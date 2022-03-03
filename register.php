@@ -27,7 +27,7 @@ if (isset($_POST['submit'])){
                 $lname = "";
                 $username = "";
                 $email = "";
-                $_POST['password'] = "";
+                $_POST['pass'] = "";
                 $_POST['cpassword'] = "";
 
             }else {
@@ -38,9 +38,7 @@ if (isset($_POST['submit'])){
         } 
     } else {
         echo"<script>alert('passwords don't match')</script>";
-    }
-        
-       
+    }  
     
 }
 ?>
@@ -61,7 +59,7 @@ if (isset($_POST['submit'])){
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     </head>
     <body>
-      <div class="container">
+      <div class="container" id="container">
           <form action="" method="POST" class="login-email">
               <p class="login-text" style="font-size:2rem; font-weight:800;">Register</p>
               <div class="input-group">
