@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="box">
-        <p>An email has been sent to</p>
+        <p>A password reset link has been sent to your email. Please check to rest it.</p>
         
     </div>
     
