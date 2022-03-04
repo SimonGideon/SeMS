@@ -72,7 +72,16 @@ if (isset($_POST['submit'])){
                   <input type="text" placeholder="User name" name=username value="<?php echo $username; ?>" required>
               </div>
               <div class="input-group">
+                  <input type="text" placeholder="ID/Passport" name=IdNo value="<?php echo $IdNo; ?>" required>
+              </div>
+              <div class="input-group">
+                  <input type="text" placeholder="Date of Birth" name=DoB value="<?php echo $DoB; ?>" required>
+              </div>
+              <div class="input-group">
                   <input type="email" placeholder="email" name=email value="<?php echo $email; ?>" required>
+              </div>
+              <div class="input-group">
+                  <input type="text" placeholder="Postal-address 0000 - Town" name=lname value="<?php echo $postaladdress; ?>" required>
               </div>
               <div class="input-group">
                   <input type="password" placeholder="Password" name=password value="<?php echo $_POST['password']; ?>" required>

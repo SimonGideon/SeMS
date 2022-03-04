@@ -18,8 +18,8 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/bootstrap-icons.css">
     <!-- font-awesome icons -->
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <script src="https://kit.fontawesome.com/cfc4a4fe0f.js" crossorigin="anonymous"></script>
     <!-- style css -->
     <link rel="stylesheet" href="css/styles.css">
@@ -144,7 +144,10 @@ if (!isset($_SESSION['username'])) {
                     <div class="card text-center bg-success">
                         <div class="card-body">
                             <h5>Loans</h5>
-                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                            <h2>
+                                <i class="fa-solid fa-hand-holding-dollar fa-large fa-100px"></i>
+                            </h2>
+
                             <div>
                                 <h5 class="card-title">Ksh.64k+</h5>
                             </div>
@@ -156,11 +159,15 @@ if (!isset($_SESSION['username'])) {
         <!-- ===Personal info and profile==== -->
         <div class="container">
             <div class="row">
-                <div class="col-sm">
-                    <div class="jumbotron">
-                        <h5>User Profile</h5>
+                <div class="user-profile" id="user-profile">
+                    <div class="col-sm">
+                        <div class="jumbotron">
+                            <img src="img/avartar.webp" alt="avartar" class="avatar">
+                            <h5>User Profile</h5>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-sm">
                     <div class="jumbotron">
                         <h5>Personal Information</h5>
