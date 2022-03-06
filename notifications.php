@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,18 +16,20 @@
     <script src="https://kit.fontawesome.com/cfc4a4fe0f.js" crossorigin="anonymous"></script>
     <!-- style css -->
     <link rel="stylesheet" href="css/styles.css">
-    <title>profile</title>
+    <title>nitifaction</title>
 </head>
 
 <body>
-<?php
-    $title = 'Profile';
-    $page = 'profile';
+    <?php
+    $title = 'Notification';
+    $page = 'notification';
     include_once('header.php');
     ?>
-        <!-- script -->
-        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+    <!-- script -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
