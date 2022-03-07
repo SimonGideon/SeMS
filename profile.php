@@ -21,7 +21,6 @@
 <body>
 <?php
     $title = 'Profile';
-    $page = 'profile';
     include_once('header.php');
     ?>
         <!-- script -->

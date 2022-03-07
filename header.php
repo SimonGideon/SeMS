@@ -30,7 +30,7 @@
                 <span class="title">Menu</span>
             </a>
         </li>
-        <li class="<?php if($page=='home'){echo 'active';}?>">
+        <li class="active">
             <a href="welcome.php">
                 <span class="icon"><i class="bi bi-house-fill"></i></span>
                 <span class="title">Home</span>

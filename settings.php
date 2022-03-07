@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +25,6 @@
 <body>
     <?php
     $title = 'Settings';
-    $page = 'settings';
     include_once('header.php');
     ?>
 
@@ -31,6 +33,17 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/script.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            swal({
+                title: "User created!",
+                text: "Suceess message sent!!",
+                icon: "success",
+                button: "Ok",
+                timer: 2000
+            });
+        });
+    </script>
 </body>
 
 </html>

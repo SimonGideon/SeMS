@@ -169,7 +169,7 @@ body {
 }
 
 #side-bar ul li.active a {
-    color: var(--bg-active);
+    background-color: var(--bg-active);
 }
 
 #side-bar ul li:hover a::before {

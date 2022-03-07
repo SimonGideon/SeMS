@@ -31,7 +31,7 @@ if (!isset($_SESSION['username'])) {
     <?php
     $title = 'Dashboard';
     $page = 'dashboard';
-    $page = 'home'; include_once('header.php');
+    include_once('header.php');
     ?>
     <section class="container-fluid">
         <!-- ===layering top ====-->
@@ -111,7 +111,7 @@ if (!isset($_SESSION['username'])) {
     </section>
     <!-- script -->
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

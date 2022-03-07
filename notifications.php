@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,13 +19,12 @@
     <script src="https://kit.fontawesome.com/cfc4a4fe0f.js" crossorigin="anonymous"></script>
     <!-- style css -->
     <link rel="stylesheet" href="css/styles.css">
-    <title>nitifaction</title>
+    <title>notifaction</title>
 </head>
 
 <body>
     <?php
-    $title = 'Notification';
-    $page = 'notification';
+    $title = 'Notification';;
     include_once('header.php');
     ?>
 
