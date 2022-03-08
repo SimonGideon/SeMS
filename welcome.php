@@ -120,6 +120,45 @@ if (!isset($_SESSION['username'])) {
                 <div class="col-sm">
                     <div class="jumbotron">
                         <h5>Personal Information</h5>
+                        <div class="row">
+	                        <div class="col-lg-12">
+			                        <button class="btn btn-primary float-right btn-sm" id="new_user"><i class="fa fa-plus"></i> Edit Profile</button>
+	                        </div>
+	                        </div>
+	                        <br>
+	                        <div class="row">
+		                        <div class="card col-lg-12">
+			                        <div class="card-body">
+				                        <table class="table-striped table-bordered col-md-12">
+			                        <thead>
+				                        <tr>
+					                        <th class="text-center">#</th>
+					                        <th class="text-center">Name</th>
+					                        <th class="text-center">Username</th>
+					                        <th class="text-center">Action</th>
+				                        </tr>
+			                        </thead>
+			                        <tbody>
+				                        <tr>
+				 	                        <td>
+				 		                        <?php echo $i++ ?>
+				 	                        </td>
+				 	                        <td>
+				 		                        <?php echo $row['name'] ?>
+				 	                        </td>
+				 	                        <td>
+				 		                        <?php echo $row['username'] ?>
+				 	                        </td>
+				 	                        <td>
+				 	                        </td>
+				                        </tr>
+			                        </tbody>
+		                        </table>
+			                        </div>
+		                        </div>
+	                        </div>
+
+                        </div>
                     </div>
                 </div>
 
@@ -127,6 +166,9 @@ if (!isset($_SESSION['username'])) {
         </div>
         </div>
     </section>
+    <?php
+    $conn->close();
+    ?>
     <!-- script -->
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
