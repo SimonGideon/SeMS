@@ -1,5 +1,6 @@
 
 <?php
+include 'config.php';
 session_start();
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
@@ -95,22 +96,21 @@ if (!isset($_SESSION['username'])) {
                         <div class="jumbotron">
                             <img src="img/avartar.webp" alt="avartar" class="avatar">
                             <h5>User Profile</h5>
-                            <?php echo  $_SESSION['username'];
+                            <?php echo $_SESSION['username']. "<br>" ;
                             $u_name = $_SESSION['username'];
                             $sql = "SELECT fname, lname FROM users WHERE username='$u_name'";
                             $result = $conn->query($sql);
                             
                             if ($result->num_rows > 0) {
-                              // output data of each row
-                              while($row = $result->fetch_assoc()) {
-                                echo "<br> First Name: ". $row["fname"]. "  ". $row["lname"]. " " . "<br>";
+                                // output data of each row
+                                while($row = $result->fetch_assoc()) {
+                                  echo  $row["fname"]. " " . $row["lname"];
+                                }
+                              } else {
+                                echo "0 results";
                               }
-                            } else {
-                              echo "0 results";
-                            }
-                            
-                            $conn->close();
-                            ?>
+                              
+                              $conn->close();
                             
                             ?>
                         </div>
