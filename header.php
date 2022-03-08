@@ -10,7 +10,7 @@
     </div>
     <ul>
         <li>
-            <?php echo "<h6>Logged in as:  " . $_SESSION['username'] . "</h6>"; ?>
+            <?php echo "<p>Logged in as:  " . $_SESSION['username'] . "</p>"; ?>
         </li>
         <li>
             <a href="index.php"><i class=" logout bi bi-power text-white"></i></a>

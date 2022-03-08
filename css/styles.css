@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+Skip to content Search or jump to… Pull requests Issues Marketplace Explore @SimonGideon SimonGideon / SeMS Public Code Issues Pull requests Actions Projects Wiki Security Insights Settings SeMS/css/styles.css @SimonGideon SimonGideon Responsive side-bar Latest commit 3b0454c 2 hours ago History 1 contributor 274 lines (227 sloc) 4.82 KB @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --bg-primary: #41444b;
@@ -138,7 +138,7 @@ body {
 }
 
 /* ===Side bar=== */
-.side-bar {
+#side-bar {
     position: fixed;
     width: 60px;
     height: 100%;
@@ -151,7 +151,7 @@ body {
     width: 300px;
 }
 
-.side-bar ul {
+#side-bar ul {
     position: absolute;
     top: 80px;
     left: 0;
@@ -164,8 +164,12 @@ body {
     position: relative;
 }
 
+#side-bar {
+    background-color: #111;
+}
+
 #side-bar ul li a:hover {
-    color: var(--bg-primary);
+    background-color: var(--bg-active);
 }
 
 #side-bar ul li.active a {

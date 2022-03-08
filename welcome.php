@@ -1,9 +1,9 @@
+
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@ if (!isset($_SESSION['username'])) {
     ?>
     <section class="container-fluid">
         <!-- ===layering top ====-->
-        <div class="carol-cards">
+        <div class="carol-cards ms-auto ms-md-0 me-lg-4">
             <div class="row my-4">
                 <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="card text-center bg-info">
@@ -91,10 +91,28 @@ if (!isset($_SESSION['username'])) {
         <div class="container">
             <div class="row">
                 <div class="user-profile" id="user-profile">
-                    <div class="col-sm">
+                    <div class="col-sm ">
                         <div class="jumbotron">
                             <img src="img/avartar.webp" alt="avartar" class="avatar">
                             <h5>User Profile</h5>
+                            <?php echo  $_SESSION['username'];
+                            $u_name = $_SESSION['username'];
+                            $sql = "SELECT fname, lname FROM users WHERE username='$u_name'";
+                            $result = $conn->query($sql);
+                            
+                            if ($result->num_rows > 0) {
+                              // output data of each row
+                              while($row = $result->fetch_assoc()) {
+                                echo "<br> First Name: ". $row["fname"]. "  ". $row["lname"]. " " . "<br>";
+                              }
+                            } else {
+                              echo "0 results";
+                            }
+                            
+                            $conn->close();
+                            ?>
+                            
+                            ?>
                         </div>
                     </div>
                 </div>
