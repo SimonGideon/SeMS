@@ -1,3 +1,4 @@
+
 <?php
 include 'config.php';
 // starting a session 
@@ -9,7 +10,6 @@ if (isset($_session["username"])) {
 
     header('location:welcome.php');
 }
-
 // check the info isset haha.. by using the superglobal post
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
@@ -20,9 +20,10 @@ if (isset($_POST['submit'])) {
     if ($result->num_rows > 0) {
         $row  = mysqli_fetch_assoc($result); //fetch the entire row of the result if any.
         $_SESSION["username"] = $row["username"]; //assign the row result to the session
+        echo $swal;
         header("location: welcome.php");
     } else {
-        echo "<script> alert('OOps Email or Password is wrong')</script>";
+        echo $swat;
     }
 }
 ?>
@@ -45,7 +46,12 @@ if (isset($_POST['submit'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
+<?php
+$swat ='<script>swal("Good job!", "You clicked the button!", "success");</script>'
+?>
 
 <body>
 

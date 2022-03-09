@@ -272,7 +272,26 @@ body {
 
 /* ====User profile==== */
 .user-profile img {
-    width: 80px;
-    border-radius: 50%;
+    width: 100px;
+    border-radius: 57%;
     border-color: green;
+}
+
+.user-profile {
+    margin: auto;
+}
+
+table th {
+    margin-left: 10px;
+}
+
+.profile-text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+/* message */
+#message-cont {
+    background-color: var(--bg-active);
 }
