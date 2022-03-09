@@ -1,4 +1,3 @@
-
 <?php
 include 'config.php';
 // starting a session 
@@ -20,10 +19,34 @@ if (isset($_POST['submit'])) {
     if ($result->num_rows > 0) {
         $row  = mysqli_fetch_assoc($result); //fetch the entire row of the result if any.
         $_SESSION["username"] = $row["username"]; //assign the row result to the session
-        echo $swal;
-        header("location: welcome.php");
+        if ($row["type"] == "1") {
+            header("location: admin-dashboard.php");
+?>
+            <script>
+                swal({
+                    title: "User created!",
+                    text: "Suceess message sent!!",
+                    icon: "success",
+                    button: "Ok",
+                    timer: 2000
+                });
+            </script>
+        <?php
+        } else {
+            header("location: welcome.php");
+        }
     } else {
-        echo $swat;
+        ?>
+        <script>
+            swal({
+                title: "Error!",
+                text: "Check your username and Password!!",
+                icon: "warning",
+                button: "Ok",
+                timer: 2000
+            });
+        </script>
+<?php
     }
 }
 ?>
@@ -46,11 +69,11 @@ if (isset($_POST['submit'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+    </link>
+
 </head>
 <?php
-$swat ='<script>swal("Good job!", "You clicked the button!", "success");</script>'
 ?>
 
 <body>
@@ -75,13 +98,22 @@ $swat ='<script>swal("Good job!", "You clicked the button!", "success");</script
                         <button name="submit" class="btn">Login</button>
                     </div>
                     <p class="login-register-text text-center">Dont have an account?<a href="register.php">Register here</a><br>
-                    <a href="reset.php">Reset Password</a></p>
+                        <a href="reset.php">Reset Password</a>
+                    </p>
 
                 </form>
             </div>
         </div>
 
     </head>
+    <script type="text/javascript">
+        function clickMe() {
+            swal("Good job!", "You clicked the button!", "success");
+        }
+    </script>
 </body>
+<!-- js links -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="js/script.js"></script>
 
 </html>

@@ -19,15 +19,56 @@ if (isset($_POST['submit'])) {
                 VALUES ('$fname', '$lname', '$username', '$IdNo', '$DoB', '$email', '$address', '$password')";
             $result = mysqli_query($conn, $sql);
             if ($result) {
-                echo "<script>alert('Wow! User Registration Complete.')</script>";
+?>
+
+                <script>
+                    swal({
+                        title: "User Created",
+                        text: "Proceed to log in..",
+                        icon: "success",
+                        button: "Ok",
+                        timer: 2000
+                    });
+                </script>
+            <?php
             } else {
-                echo "<script>alert('Whoops! Something went wrong, Please try again.')</script>";
+            ?>
+                <script>
+                    swal({
+                        title: "Whoops!",
+                        text: "Something Went wrong!",
+                        icon: "warning",
+                        button: "Ok",
+                        timer: 2000
+                    });
+                </script>
+            <?php
             }
         } else {
-            echo "<script>alert('Whoops! Email Already exists.')</script>";
+            ?>
+            <script>
+                swal({
+                    title: "Email Already exist",
+                    text: "Tyr anothe one.",
+                    icon: "warning",
+                    button: "Ok",
+                    timer: 2000
+                });
+            </script>
+        <?php
         }
     } else {
-        echo "<script>alert('Passwords not Matched.')</script>";
+        ?>
+        <script>
+            swal({
+                title: "Password did not match",
+                text: "Tyr anothe one.",
+                icon: "warning",
+                button: "Ok",
+                timer: 2000
+            });
+        </script>
+<?php
     }
 }
 
@@ -51,12 +92,12 @@ if (isset($_POST['submit'])) {
 
 <body>
     <div class="card" id="container">
-        <div >
+        <div>
             <div class="">
                 <form action="register.php" method="POST" class="login-email">
                     <p class="login-text" style="font-size:2rem; font-weight:800;">Register</p>
                     <div class="input-group">
-                        <input  type="text" placeholder="first name" name=fname value="<?php echo $fname; ?>" required>
+                        <input type="text" placeholder="first name" name=fname value="<?php echo $fname; ?>" required>
                     </div>
                     <div class="input-group">
                         <input type="text" placeholder="Last name" name=lname value="<?php echo $lname; ?>" required>
@@ -91,8 +132,9 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 </body>
-    <!-- script -->
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="js/script.js"></script>
+<!-- script -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="js/script.js"></script>
+
 </html>
