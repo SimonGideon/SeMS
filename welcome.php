@@ -47,8 +47,8 @@ $result = $conn->query($sql);
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-                    <div class="card text-center">
+                <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3 ">
+                    <div class="card text-center bg-primary">
                         <div class="card-body">
                             <h5>Shares</h5>
                             <i class="bi bi-building"></i>
@@ -79,7 +79,7 @@ $result = $conn->query($sql);
             <div class="row">
                 <div class="user-profile" id="user-profile">
                     <div class="col-sm ">
-                        <div class="jumbotron" style="margin-top: -125px;">
+                        <div class="jumbotron">
                             <img src="img/avartar.webp" alt="avartar" class="avatar">
                             <h5>User Profile</h5>
                             <?php echo $_SESSION['username'] . "<br>";
@@ -92,19 +92,21 @@ $result = $conn->query($sql);
                 </div>
 
                 <div class="col-sm">
-                    <div class="jumbotron">
-                        <p>Personal Information</P>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <button href="edit_profile.php" class="btn btn-primary float-right btn-sm" id="new_user"><i class="fa fa-plus"></i> Edit Profile</button>
+                    <div class="card">
+                        <div class="card-header">
+                            <p>Personal Information</P>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <button href="edit_profile.php" class="btn btn-primary float-right btn-sm" id="new_user"><i class="fa fa-plus"></i> Edit Profile</button>
+                                </div>
                             </div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="card col-lg-12">
+                            <div class=" col-lg-12">
                                 <div class="card-body">
                                     <table class="table-striped table-bordered col-md-12">
-                                        <tbody>
+                                        <tbody >
                                             <tr>
                                                 <th scope="row">Names:</th>
                                                 <td><?php echo  $row["fname"] . " " . $row["lname"]; ?></td>

@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
 
                     </div>
                     <div class="input-group">
-                        <button name="submit" class="btn">Login</button>
+                        <button name="submit" class="btn" onclick="clickMe()">Login</button>
                     </div>
                     <p class="login-register-text text-center">Dont have an account?<a href="register.php">Register here</a><br>
                         <a href="reset.php">Reset Password</a>
@@ -108,7 +108,7 @@ if (isset($_POST['submit'])) {
     </head>
     <script type="text/javascript">
         function clickMe() {
-            swal("Good job!", "You clicked the button!", "success");
+            swal("Log in Success!", "Redirecting!", "success");
         }
     </script>
 </body>

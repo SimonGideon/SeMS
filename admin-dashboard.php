@@ -6,28 +6,47 @@ if (!isset($_SESSION['username'])) {
 }
 $title = 'Dashboard';
 $page = 'dashboard';
-include_once('header.php');
+include_once('admin-header.php');
+
 ?>
-<div class="container"style="margin-top: 100px;">
-  <div class="row">
-    <div class="col-md-12">
-      <h4>Excel Upload Tutorial</h4>
-      <hr>
-      <form method="post" action="file-upload.php" enctype="multipart/form-data">
-        <div class="form-group row">
-          <label class="col-md-3">Select File</label>
-          <div class="col-md-8">
-        <input type="file" name="uploadfile" class="form-control"/>
+
+
+<body>
+    <div class="container" style="margin-top: 100px;">
+        <h2>Admin Dashboard</h2>
+        <div class="row mx-md-n5" style="padding: 25px;">
+            <div class="col px-md-5">
+                <button tyep="submit" onclick="window.location.href='manage_user.php'" class="btn btn-primary float-right btn-sm" id="new_user"><i class="fa-solid fa-user-plus"></i> Edit Profile</button>
+            </div>
+            <div class="col px-md-5">
+                <div class="p-3 border bg-light">Custom column padding</div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h4>Import Users shares</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="code.php" method="POST">
+                            <input type="file" name="import_file" class="form-control" />
+                            <button type="submit" name="save_excel_data" class="btn btn-primary mt-3">Import</button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="form-group row">
-          <label class="col-md-3"></label>
-          <div class="col-md-8">
-        <input type="submit" name="submit" class="btn btn-primary">
-      </div>
     </div>
-      </form>
-    </div>
-  </div>
-</div>
+</body>
+<script>
+
+</script>
+
+</html>
