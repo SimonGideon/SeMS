@@ -59,7 +59,7 @@
 
     <ul>
         <li>
-            <a href="#" class="toggle">
+            <a href="" class="toggle">
                 <span class="icon"><i class="bi bi-list-task"></i></span>
                 <span class="title">Menu</span>
             </a>
@@ -77,7 +77,7 @@
             </a>
         </li>
         <li>
-            <a href="messages.php">
+            <a href="">
                 <span class="icon"><i class="bi bi-envelope-fill"></i></span>
                 <span class="title">Message</span>
             </a>
@@ -89,13 +89,13 @@
             </a>
         </li>
         <li>
-            <a href="settings.php">
+            <a href="">
                 <span class="icon"><i class="bi bi-gear"></i></span>
                 <span class="title">Settings</span>
             </a>
         </li>
         <li>
-            <a href="notifications.php">
+            <a href="">
                 <span class="icon"><i class="bi bi-bell"></i></span>
                 <span class="title">Notification</span>
             </a>

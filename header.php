@@ -37,6 +37,8 @@
         <!-- js links -->
         <script src="js/script.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="img/favicon.png">
         <!-- title -->
         <title>SeMS| <?php $title ?> </title>
     </head>
@@ -124,8 +126,9 @@
                     if (willDelete) {
                         swal("You've succefully logged out!", {
                             icon: "success",
-                        }).then(function(){
-                                window.location = "index.php"});
+                        }).then(function() {
+                            window.location = "index.php"
+                        });
                     } else {
                         swal("You havent logged out yet");
                     }

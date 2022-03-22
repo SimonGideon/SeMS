@@ -21,22 +21,13 @@ if (isset($_POST['submit'])) {
         $_SESSION["username"] = $row["username"]; //assign the row result to the session
         if ($row["type"] == "1") {
             header("location: admin-dashboard.php");
-?>
-            <script>
-                swal({
-                    title: "User created!",
-                    text: "Suceess message sent!!",
-                    icon: "success",
-                    button: "Ok",
-                    timer: 2000
-                });
-            </script>
-        <?php
+            echo '<script>', 'clickMe()', '</script>';
         } else {
             header("location: welcome.php");
+            echo '<script>', 'clickMe()', '</script>';
         }
     } else {
-        ?>
+?>
         <script>
             swal({
                 title: "Error!",
@@ -97,7 +88,7 @@ if (isset($_POST['submit'])) {
 
                     </div>
                     <div class="input-group">
-                        <button name="submit" class="btn" onclick="clickMe()">Login</button>
+                        <button name="submit" class="btn">Login</button>
                     </div>
                     <p class="login-register-text text-center">Dont have an account?<a href="register.php">Register here</a><br>
                         <a href="reset.php">Reset Password</a>
