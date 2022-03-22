@@ -19,6 +19,7 @@
         <!-- style css -->
         <link rel="stylesheet" href="css/styles.css">
         <title>SeMS| Dashboard </title>
+        <!-- favicon -->
         <link rel="shortcut icon" href="img/favicon.png">
         <!-- bootsrap -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -31,8 +32,12 @@
         <script src="https://kit.fontawesome.com/cfc4a4fe0f.js" crossorigin="anonymous"></script>
         <!-- style css -->
         <link rel="stylesheet" href="css/styles.css">
+        <!-- sweet alert -->
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
         <!-- js links -->
-        <link rel="javascript" href="js/script.js">
+        <script src="js/script.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!-- title -->
         <title>SeMS| <?php $title ?> </title>
     </head>
     <nav id=mynavmenu class="navbar fixed-top mynav">
@@ -50,7 +55,7 @@
                 <?php echo "<p>Logged in as:  " . $_SESSION['username'] . "</p>"; ?>
             </li>
             <li>
-                <a onclick="clickMe()" href="index.php"><i class=" logout bi bi-power text-white"></i></a>
+                <a onclick="clickMe()"><i class=" logout bi bi-power text-white"></i></a>
             </li>
         </ul>
     </nav>
@@ -106,3 +111,24 @@
 
         </ul>
     </div>
+    <script type="text/javascript">
+        function clickMe() {
+            swal({
+                    title: "Are you sure?",
+                    text: "You want log out as the current user.",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("You've succefully logged out!", {
+                            icon: "success",
+                        }).then(function(){
+                                window.location = "index.php"});
+                    } else {
+                        swal("You havent logged out yet");
+                    }
+                });
+        }
+    </script>
