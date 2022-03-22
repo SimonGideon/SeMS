@@ -65,6 +65,8 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="css/styles.css">
     <!-- <link rel="stylesheet" href="css/main.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
