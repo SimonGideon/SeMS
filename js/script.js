@@ -5,7 +5,7 @@ for (var i = 0; i <= toggle.length; i++) {
         sidebar.classList.toggle('active');
     });
 }
-$(document).ready(function() {
+function clickMe(){
     swal({
         title: "User created!",
         text: "Suceess message sent!!",
@@ -13,4 +13,4 @@ $(document).ready(function() {
         button: "Ok",
         timer: 2000
     });
-});
+};

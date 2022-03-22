@@ -31,6 +31,8 @@
         <script src="https://kit.fontawesome.com/cfc4a4fe0f.js" crossorigin="anonymous"></script>
         <!-- style css -->
         <link rel="stylesheet" href="css/styles.css">
+        <!-- js links -->
+        <link rel="javascript" href="js/script.js">
         <title>SeMS| <?php $title ?> </title>
     </head>
     <nav id=mynavmenu class="navbar fixed-top mynav">
