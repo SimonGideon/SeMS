@@ -230,6 +230,10 @@ body {
     margin-top: 15vh;
     margin-left: 100px;
 }
+/* sign-up */
+.sign-up .card{
+    outline: #111 !important;
+}
 
 /* media query */
 @media(max-width:768px) {

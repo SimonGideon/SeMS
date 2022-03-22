@@ -30,6 +30,9 @@ if (isset($_POST['submit'])) {
                         timer: 2000
                     });
                 </script>
+                <?php
+                header("location: index.php");
+                ?>
             <?php
             } else {
             ?>
@@ -91,7 +94,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <div class="card" id="container">
+        <div class="card" id="container">
         <div>
             <div class="">
                 <form action="register.php" method="POST" class="login-email">
