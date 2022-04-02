@@ -3,18 +3,31 @@ session_start();
 include 'config.php'
 ?>
 <?php
-if (!empty($_POST["send"])) {
-    $name = $_POST["userName"];
-    $email = $_POST["userEmail"];
-    $subject = $_POST["subject"];
-    $content = $_POST["content"];
-    mysqli_query($conn, "INSERT INTO tblcontact (user_name, user_email,subject,content) VALUES ('" . $name . "', '" . $email . "','" . $subject . "','" . $content . "')");
-    $insert_id = mysqli_insert_id($conn);
-    //if(!empty($insert_id)) {
-    $message = "Your contact information is saved successfully.";
-    $type = "success";
-    //}
+$title = 'Messages';
+include_once('header.php');
+?>
+<?php
+$fname = $_SESSION['username'];
+$lname = $_SESSION['lname'];
+?>
+
+<?php
+if (isset($_POST['submit'])) {
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $subject = $_POST['subject'];
+    $body = $_POST['body'];
+    $sql = "INSERT INTO messages (senderFname, senderLname, subject, body)
+                VALUES ('$fname', '$lname', '$subject', '$body')";
+
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+        echo $swarl;
+    } else {
+        echo "message could not be sent contact system Admin";
+    }
 }
+mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,62 +51,59 @@ if (!empty($_POST["send"])) {
 </head>
 
 <body>
-    <?php
-    $title = 'Messages';
-    include_once('header.php');
-    ?>
 
-    <div class="   container row" style="margin-top: 25vh;">
-        
-            <form class="col md-8 container mt-70 card " style="margin: 4px 22px 70px 70px;  " id="message-cont">
-                <!-- Name input -->
-                <div class="form-outline  m-4">
-                    <input type="text" id="form4Example1" class="form-control" style="" />
-                    <label class="form-label" for="form4Example1">subject</label>
-                </div>
-                <!-- Message input -->
-                <div class="form-outline mb-4">
-                    <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                    <label class="form-label" for="form4Example3">Message</label>
-                </div>
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
-            </form>
+
+    <div class="container row" style="margin-top: 25vh;">
+
+        <form action="messages.php" method="POST" class="col md-8 container mt-70 card " style="margin: 4px 22px 70px 70px;  " id="message-cont">
+            <!-- subject input -->
+            <div class="form-outline  m-4">
+                <input type="text" placeholder="Enter your Subject." name="subject" class="form-control" value="<?php echo $subject ?>" required />
+                <label class="form-label" for="form4Example1">subject</label>
+            </div>
+            <!-- Message input -->
+            <div class="form-outline mb-4">
+                <textarea class="form-control" placeholder="Write your message to the admin here." name="body" rows="4" value="<?php echo $body ?>" required></textarea>
+                <label class="form-label" for="form4Example3">Message</label>
+            </div>
+            <!-- Submit button -->
+            <button type="submit" value="submit" class="btn btn-primary btn-block mb-4">Send</button>
+        </form>
         </span>
-        <div class="col xl-8 jumbotron text-center" style="margin-top: 4px; width: 20%; margin-bottom: 70px;">
+        <div class="col xl-8  text-center" id="box" style="background-color: #C2C2C2; height: fit-content;">
             <div class="">
                 <div class="">
                     <h4>Announcements</h4>
                     <table class="table table-bordered" id="loan-list">
-					<colgroup>
-						<col width="10%">
-						<col width="25%">
-						<col width="25%">
-						<col width="20%">
-						<col width="10%">
-						<col width="10%">
-					</colgroup>
-					<thead>
-						<tr>
-							<th class="text-center">subject</th>
-							<th class="text-center">Payee</th>
-							<th class="text-center">To</th>
-							<th class="text-center">Author</th>
-							<th class="text-center">Date</th>
-                            <th class="text-center">Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						 <tr>	
-						 	<td>Repayment of loans</td>
-                             <td>Loan</td>
-                             <td>Thursday</td>
-                             <td>Mark</td>
-                             <td>Today</td>
-                             <td><button class="btn bg-primary">View</button></td>
-						 </tr>
-					</tbody>
-				</table>
+                        <colgroup>
+                            <col width="10%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="20%">
+                            <col width="10%">
+                            <col width="10%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-center">subject</th>
+                                <th class="text-center">Payee</th>
+                                <th class="text-center">To</th>
+                                <th class="text-center">Author</th>
+                                <th class="text-center">Date</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Repayment of loans</td>
+                                <td>Loan</td>
+                                <td>Thursday</td>
+                                <td>Mark</td>
+                                <td>Today</td>
+                                <td><button class="btn bg-primary">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </div>
 
@@ -109,5 +119,10 @@ if (!empty($_POST["send"])) {
     <script src="js/script.js"></script>
 
 </body>
+<script>
+    function swarl() {
+        swal("Good job!", "You clicked the button!", "success");
+    }
+</script>
 
 </html>

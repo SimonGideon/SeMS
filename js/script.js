@@ -5,12 +5,4 @@ for (var i = 0; i <= toggle.length; i++) {
         sidebar.classList.toggle('active');
     });
 }
-function clickMe(){
-    swal({
-        title: "User created!",
-        text: "Suceess message sent!!",
-        icon: "success",
-        button: "Ok",
-        timer: 2000
-    });
-};
+

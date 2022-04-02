@@ -165,18 +165,18 @@ body {
     background-color: #111;
 }
 
-#side-bar ul li a:hover {
-    background-color: var(--bg-active);
+/* #side-bar ul li a:hover {
+    background-color: var(--bg-active); */
 }
 
 #side-bar ul li.active a {
     background-color: var(--bg-active);
 }
 
-#side-bar ul li:hover a::before {
+/* #side-bar ul li:hover a::before {
     background: var(--bg-active);
     width: 100%;
-}
+} */
 
 #side-bar ul li a {
     position: relative;
@@ -269,6 +269,11 @@ body {
         display: none;
 
     }
+}
+/* ===Messages=== */
+#box{
+    background-color: #a2a2a2 !important;
+    
 }
 
 /* ====User profile==== */
