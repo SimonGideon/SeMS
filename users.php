@@ -31,8 +31,8 @@ include 'config.php';
                 </div>
                 <div class="modal-body">
                 <div class="form-group">
-                        <label for="completelname">First Name</label>
-                        <input type="text" class="form-control" id="completelname" placeholder="Enter First Name">
+                        <label for="completefname">First Name</label>
+                        <input type="text" class="form-control" id="completefname" placeholder="Enter First Name">
                     </div>
                     <div class="form-group">
                         <label for="completelname">Last Name</label>
@@ -72,11 +72,27 @@ include 'config.php';
 <!-- js -->
 <script>
     function adduser(){
-        let namefAdd =$('#completefname').val();
-        let namelAdd =$('#completelname').val();
-        let Username =$('#completeUsername').val();
-        let Email =$('#completemail').val();
-        let type =$('#completetype').val();
+        var namefAdd =$('#compvarefname').val();
+        var namelAdd =$('#compvarelname').val();
+        var Username =$('#compvareUsername').val();
+        var Email =$('#compvaremail').val();
+        var type =$('#completetype').val();
+        $.ajax({
+            url:"insert.php",
+            type: 'post',
+            data: {
+                fnameSend: namefAdd,
+                lnameSend: namelAdd,
+                usernameSend: Username,
+                emailSend: Email,
+                typeSend: type,
+
+            },
+            success: function(data, status){
+                // function to display data;
+                console.log(status);
+            }
+        })
 
     }
 </script>
