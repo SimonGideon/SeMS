@@ -71,7 +71,14 @@ include 'config.php';
 
 <!-- js -->
 <script>
-    
+    function adduser(){
+        let namefAdd =('#completefname').val()
+        let namelAdd =('#completelname').val()
+        let Username =('#completeUsername').val()
+        let Email =('#completemail').val()
+        let type =('#completetype').val()
+
+    }
 </script>
 </body>
 
