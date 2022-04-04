@@ -63,6 +63,9 @@ include 'config.php';
         <button type="button" class="btn btn-primary" style="margin-top: 80px;" data-toggle="modal" data-target="#completeModal">
             Add New User
         </button>
+        <div id="displayDataTable">
+
+        </div>
     </div>
 <!-- bootsrap jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -71,11 +74,25 @@ include 'config.php';
 
 <!-- js -->
 <script>
+    // Display function
+    function displayData(){
+        var displayData = "true";
+        $.ajax({
+            url: "display.php",
+            type: 'post',
+            data:{
+                displaySend: displayData
+            },
+            success: function(data, status){
+                $('displayDataTable').html(data);
+            }
+        })
+    }
     function adduser(){
-        var namefAdd =$('#compvarefname').val();
-        var namelAdd =$('#compvarelname').val();
-        var Username =$('#compvareUsername').val();
-        var Email =$('#compvaremail').val();
+        var namefAdd =$('#completefname').val();
+        var namelAdd =$('#completelname').val();
+        var Username =$('#completeUsername').val();
+        var Email =$('#completemail').val();
         var type =$('#completetype').val();
         $.ajax({
             url:"insert.php",
@@ -89,10 +106,11 @@ include 'config.php';
 
             },
             success: function(data, status){
-                // function to display data;
-                console.log(status);
+                // // function to display data;
+                // console.log(status);
+                
             }
-        })
+        });
 
     }
 </script>
